@@ -11,5 +11,5 @@
     / Collect the nav links, forms, and other content for toggling
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
       %ul.nav.navbar-nav.navbar-right
-        / %li= link_to 'New order', new_meal_order_path unless current_page?(new_meal_order_path)
+        %li= link_to 'New order', new_meal_order_path unless current_page?(new_meal_order_path)
         = render 'layouts/navigation_links'

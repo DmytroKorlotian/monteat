@@ -1,1 +1,8 @@
-New meal order
+.clearfix
+%div{"ng-app" => "app", "ng-controller" => "mealOrdersCtrl", "ng-init" => "init()"}
+  .container
+    .col-md-12
+      %p Available restaurants
+      .restaurants{"ng-repeat"=>"restaurant in restaurants"}
+        %ul
+          %li {{restaurant.name}}
