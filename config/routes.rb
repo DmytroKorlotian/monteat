@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   resources :orders
   resources :meal_orders
   resources :restaurants, only: [:index]
+  resources :meals, only: [:index]
 end

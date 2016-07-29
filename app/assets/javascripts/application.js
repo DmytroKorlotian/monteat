@@ -14,6 +14,8 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require angular
+//= require angular-ui-select
+//= require angular-sanitize
 //= require angular-rails-templates
 //= require ./monteat/app
 //= require_tree .

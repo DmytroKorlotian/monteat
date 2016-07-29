@@ -2,7 +2,9 @@
   "lib": {
     "name": "bower-rails generated lib assets",
     "dependencies": {
-      "angular": "v1.5.8"
+      "angular": "v1.5.8",
+      "angular-ui-select": "v0.18.1",
+      "angular-sanitize": "v1.5.8"
       // "threex"      : "git@github.com:rharriso/threex.git",
       // "gsvpano.js"  : "https://github.com/rharriso/GSVPano.js/blob/master/src/GSVPano.js"
     }

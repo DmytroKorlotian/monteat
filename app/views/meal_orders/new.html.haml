@@ -1,8 +1,28 @@
-.clearfix
 %div{"ng-app" => "app", "ng-controller" => "mealOrdersCtrl", "ng-init" => "init()"}
-  .container
-    .col-md-12
-      %p Available restaurants
-      .restaurants{"ng-repeat"=>"restaurant in restaurants"}
-        %ul
-          %li {{restaurant.name}}
+  %form.form-horizontal
+    %fieldset
+      %legend Select a restaurant
+      .form-group
+        %label.col-sm-3.control-label Name
+        .col-sm-6
+          %ui-select(ng-model="chosenRestaurant" autofocus theme="bootstrap" search-enabled=false)
+            %ui-select-match(placeholder="Select a restaurant" allow-clear=false)
+              {{$select.selected.name}}
+            %ui-select-choices(repeat="restaurant in restaurants")
+              %div(ng-bind-html="restaurant.name")
+
+  %form.form-horizontal
+    %fieldset
+      %legend Select a meal
+      .form-group
+        %label.col-sm-3.control-label Name
+        .col-sm-6
+          %ui-select(ng-model="chosenMeal" autofocus theme="bootstrap" search-enabled=false)
+            %ui-select-match(placeholder="Select a meal" allow-clear=false)
+              {{$select.selected.name}}
+            %ui-select-choices(repeat="meal in meals")
+              %div(ng-bind-html="meal.name")
+
+
+
+
