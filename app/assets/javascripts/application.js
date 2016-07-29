@@ -12,6 +12,15 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require bootstrap-sprockets
+//= require angular
+//= require angular-rails-templates
+//= require ./monteat/app
 //= require_tree .
+//= require_tree ./monteat/templates
+//= require_tree ./monteat/modules
+//= require_tree ./monteat/filters
+//= require_tree ./monteat/directives
+//= require_tree ./monteat/models
+//= require_tree ./monteat/services
+//= require_tree ./monteat/controllers

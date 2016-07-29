@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   get '/signout' => 'sessions#destroy', :as => :signout
   get '/auth/failure' => 'sessions#failure'
   resources :orders
-  resources :meal_orders
+  # resources :meal_orders
+  get 'meal_orders' => 'meal_orders#index'
 end
