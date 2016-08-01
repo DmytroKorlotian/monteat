@@ -4,11 +4,11 @@ angular.module('app').controller 'mealOrdersCtrl', [
     console.log 'ExampleCtrl running'
     $scope.restaurants = []
     $scope.meals = []
-    $scope.chosenRestaurant = null
-    $scope.chosenMeal = null
+    $scope.choice = {}
     $scope.init = ->
       Restaurant.index().then (data) ->
         $scope.restaurants = data
-      Meal.index().then (data) ->
+    $scope.fetchMeals = (restaurant_id) ->
+      Meal.show(restaurant_id).then (data) ->
         $scope.meals = data
 ]

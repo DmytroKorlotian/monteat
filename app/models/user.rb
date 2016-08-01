@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  has_many :food_orders
+  has_many :meal_orders
 
   def self.create_with_omniauth(auth)
     create! do |user|
