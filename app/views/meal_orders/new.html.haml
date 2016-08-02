@@ -1,31 +1,53 @@
-%div{"ng-app" => "app", "ng-controller" => "mealOrdersCtrl", "ng-init" => "init()"}
-  %form.form-horizontal
-    %fieldset
-      %legend Select a restaurant
-      .form-group
-        %label.col-sm-3.control-label Name
-        .col-sm-6
-          %ui-select(ng-model="choice.restaurant" autofocus theme="bootstrap" search-enabled=false ng-change="fetchMeals(choice.restaurant.id)")
-            %ui-select-match(placeholder="Select a restaurant" allow-clear=false)
-              {{$select.selected.name}}
-            %ui-select-choices(repeat="restaurant in restaurants")
-              %div(ng-bind-html="restaurant.name")
+%div(ng-app="app" ng-controller="mealOrdersCtrl" ng-init="fetchRestaurants()")
+  .alert.alert-success(ng-show="flash.notice")
+    {{ flash.notice }}
+  .alert.alert-danger(ng-show="flash.alert")
+    {{ flash.alert }}
 
-  %form.form-horizontal(ng-show="choice.restaurant")
-    %fieldset
-      %legend Select a meal
-      .form-group
-        %label.col-sm-3.control-label Name
-        .col-sm-6
-          %ui-select(ng-model="choice.meal" autofocus theme="bootstrap" search-enabled=false)
-            %ui-select-match(placeholder="Select a meal" allow-clear=false)
-              {{$select.selected.name}}
-            %ui-select-choices(repeat="meal in meals")
-              %div(ng-bind-html="meal.name")
-              %small
-                price:
-                %span(ng-bind-html="meal.price | currency:'PLN'")
+  .container
+    .row
+      .col-md-6
+        %form.form-horizontal
+          %fieldset
+            %legend Select a restaurant
+            .form-group
+              %label.col-sm-3.control-label Name
+              .col-sm-6
+                %ui-select(ng-model="choice.restaurant" autofocus theme="bootstrap" search-enabled=false ng-change="fetchMeals(choice.restaurant.id)")
+                  %ui-select-match(placeholder="Select a restaurant" allow-clear=false)
+                    {{$select.selected.name}}
+                  %ui-select-choices(repeat="restaurant in restaurants")
+                    %div(ng-bind-html="restaurant.name")
 
+      .col-md-6
+        %form.form-horizontal(ng-show="choice.restaurant")
+          %fieldset
+            %legend Select a meal
+            .form-group
+              %label.col-sm-3.control-label Name
+              .col-sm-6
+                %ui-select(ng-model="choice.meal" autofocus theme="bootstrap" search-enabled=false)
+                  %ui-select-match(placeholder="Select a meal" allow-clear=false)
+                    {{$select.selected.name}}
+                  %ui-select-choices(repeat="meal in meals")
+                    %div(ng-bind-html="meal.name")
+                    %small
+                      price:
+                      %span(ng-bind-html="meal.price | currency:'PLN'")
 
+    .row
+      .col-md-12
+        .text-center(ng-show="choice.meal")
+          %hr
+            %p
+              You ordered from: {{choice.restaurant.name}}
+            %p
+              Ordered meal: {{choice.meal.name}}
+            %p
+              Total price: {{choice.meal.price | currency:'PLN'}}
+
+          .btn-group
+            %button.btn.btn-primary(ng-click="createMealOrder(choice)")
+              Order
 
 
