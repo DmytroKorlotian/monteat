@@ -1,3 +1,8 @@
-%div{"ng-app" => "app", "ng-controller" => "mealOrdersCtrl"}
-  %p Value from MealOrdersCtrl:
-  %p {{ exampleValue }}
+%div(ng-app="app" ng-controller="mealOrdersCtrl" ng-init="fetchOrders()")
+  .container
+    .row
+      .col-md-6.text-center
+        %h2 Current order
+
+      .col-md-6.text-center
+        %h2 Archived orders
