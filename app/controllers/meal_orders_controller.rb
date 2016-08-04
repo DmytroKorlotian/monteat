@@ -7,6 +7,33 @@ class MealOrdersController < ApplicationController
   def index
   end
 
+  def show
+  end
+
+  def recent
+    @meal_order = MealOrder.today.by_user(current_user)&.first
+
+    respond_to do |format|
+      if @meal_order.present?
+        format.json { render json: @meal_order.meal }
+      else
+        format.json { render text: '{"message": "Go and order your meal before someone does that for you"}' }
+      end
+    end
+  end
+
+  def archived
+    @meal_orders = MealOrder.not_today.by_user(current_user)
+
+    respond_to do |format|
+      if @meal_orders.present?
+        format.json { render json: @meal_orders.map(&:meal) }
+      else
+        format.json { render text: '{"message": "No archived orders available"}' }
+      end
+    end
+  end
+
   def create
     @meal_order = MealOrder.new(meal_order_params)
     @meal_order.user_id = current_user.id
@@ -28,7 +55,7 @@ class MealOrdersController < ApplicationController
   end
 
   def todays_order
-    order.create! unless Order.today.present?
+    Order.create! unless Order.today.present?
     Order.today.first
   end
 end
