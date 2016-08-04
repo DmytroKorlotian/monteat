@@ -4,8 +4,11 @@ angular.module('app').controller 'mealOrdersCtrl', [
 
     $scope.restaurants = []
     $scope.meals = []
+    $scope.archivedOrders = []
 
     $scope.todaysOrder = null
+    $scope.todaysOrderMessage = null
+    $scope.archivedOrdersMessage = null
 
     $scope.choice = {}
     $scope.flash = {}
@@ -20,10 +23,21 @@ angular.module('app').controller 'mealOrdersCtrl', [
 
     $scope.fetchOrders = () ->
       $scope.fetchTodaysOrder()
+      $scope.fetchArchivedOrders()
 
     $scope.fetchTodaysOrder = ->
       MealOrder.fetch_todays_order().then (data) ->
-        $scope.todaysOrder = data
+        if data.message
+          $scope.todaysOrderMessage = data.message
+        else
+          $scope.todaysOrder = data
+
+    $scope.fetchArchivedOrders = ->
+      MealOrder.fetch_archived_orders().then (data) ->
+        if data.message
+          $scope.archivedOrdersMessage = data.message
+        else
+          $scope.archivedOrders = data
 
     $scope.createMealOrder = (chosenItems) ->
       MealOrder.create(chosenItems.meal.id).then (data) ->
