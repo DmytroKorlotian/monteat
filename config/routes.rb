@@ -5,7 +5,12 @@ Rails.application.routes.draw do
   get '/signout' => 'sessions#destroy', :as => :signout
   get '/auth/failure' => 'sessions#failure'
   resources :orders
-  resources :meal_orders
+  resources :meal_orders do
+    collection do
+      get 'recent'
+      get 'archived'
+    end
+  end
   resources :restaurants, only: [:index]
   resources :meals, only: [:index, :show]
 end
