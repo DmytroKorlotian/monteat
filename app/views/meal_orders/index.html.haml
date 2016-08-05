@@ -6,7 +6,9 @@
         %p(ng-show="todaysOrderMessage")
           {{todaysOrderMessage}}
         %p(ng-show="todaysOrder")
-          {{todaysOrder.name}}
+          {{todaysOrder.name}},
+          price {{todaysOrder.price | currency:'PLN'}}
+
 
       .col-md-6.text-center
         %h2 Archived orders
