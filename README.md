@@ -31,8 +31,8 @@ Visitors can't see where do authenticated users order their food from and what d
 * gem 'capybara'
 
 ## Preview
-!(C:\Users\Dima\Desktop\apka\1.png)
-!(C:\Users\Dima\Desktop\apka\2.png)
-!(C:\Users\Dima\Desktop\apka\3.png)
-!(C:\Users\Dima\Desktop\apka\4.png)
-!(C:\Users\Dima\Desktop\apka\5.png)
+![](C:\Users\Dima\Desktop\apka\1.png)
+![](C:\Users\Dima\Desktop\apka\2.png)
+![](C:\Users\Dima\Desktop\apka\3.png)
+![](C:\Users\Dima\Desktop\apka\4.png)
+![](C:\Users\Dima\Desktop\apka\5.png)
