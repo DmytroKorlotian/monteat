@@ -1,8 +1,14 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-# Environment variables (ENV['...']) can be set in the file .env file.
+# Examples of restaurants
+restaurant1 = Restaurant.create(name: "Restaurant1", telephone: "123456789")
+restaurant2 = Restaurant.create(name: "Restaurant2", telephone: "987654321")
+
+# Examples of meals
+counter = 0
+
+5.times do
+  Meal.create(restaurant_id: restaurant1.id, name: "meal#{counter}", price: counter)
+end
+
+5.times do
+  Meal.create(restaurant_id: restaurant2.id, name: "meal#{counter}", price: counter)
+end
