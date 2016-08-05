@@ -1,50 +1,21 @@
-Monteat
-================
+About idea - Monteat
+This app was developed in RoR, using Ruby 2.3.0 and Rails 5.
 
-[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+TL;DR
+Application coordinate meal ordering for users, which need to sign in first. Authentication provided by facebook via Oauth.
 
-This application was generated with the [rails_apps_composer](https://github.com/RailsApps/rails_apps_composer) gem
-provided by the [RailsApps Project](http://railsapps.github.io/).
+Assumptions
+User can order only one meal per day, can check  current and archived orders.
+Visitors can't see where do authenticated users order their food from and what do they order.
 
-Rails Composer is supported by developers who purchase our RailsApps tutorials.
-
-Problems? Issues?
------------
-
-Need help? Ask on Stack Overflow with the tag 'railsapps.'
-
-Your application contains diagnostics in the README file. Please provide a copy of the README file when reporting any issues.
-
-If the application doesn't work as expected, please [report an issue](https://github.com/RailsApps/rails_apps_composer/issues)
-and include the diagnostics.
-
-Ruby on Rails
--------------
-
-This application requires:
-
-- Ruby 2.3.0
-- Rails 5.0.0
-
-Learn more about [Installing Rails](http://railsapps.github.io/installing-rails.html).
-
-Getting Started
----------------
-
-Documentation and Support
--------------------------
-
-Issues
--------------
-
-Similar Projects
-----------------
-
-Contributing
-------------
-
-Credits
--------
-
-License
--------
+Main gems used:
+gem 'uglifier', '>= 1.3.0'
+gem 'byebug', platform: :mri
+gem 'bootstrap-sass'
+gem 'haml-rails'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'dotenv-rails'
+gem 'factory_girl_rails'
+gem 'sqlite3'
+gem 'capybara'
