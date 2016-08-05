@@ -15,7 +15,7 @@ Visitors can't see where do authenticated users order their food from and what d
 * Viewing lists of all orders
 * Single Page Application
 * Back-end done in ruby
-* Front-end done in JavaScript
+* Front-end done in AngularJS
 * Test for meal_order
 
 ## Main gems used:
