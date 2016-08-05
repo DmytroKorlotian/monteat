@@ -31,7 +31,7 @@ Visitors can't see where do authenticated users order their food from and what d
 * gem 'capybara'
 
 ## Preview
-![](https://postimg.org/image/5bof9rph3/)
+![](https://s31.postimg.org/fyi8f6xmj/1.png)
 ![](https://postimg.org/image/v8i3mdt4n/][img]https://s31.postimg.org/v8i3mdt4n/image.png)
 ![](https://postimg.org/image/kzpmgk52v/][img]https://s31.postimg.org/kzpmgk52v/image.png)
 ![](https://postimg.org/image/b3ojgwzav/][img]https://s31.postimg.org/b3ojgwzav/image.png)
