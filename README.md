@@ -8,6 +8,16 @@ Application coordinating meal ordering for users, which need to sign in first. A
 User can order only one meal per day, can check  current and archived orders.
 Visitors can't see where do authenticated users order their food from and what do they order.
 
+## Assignment task done:
+* Authentication via facebook
+* Creating new order (only register users can)
+* Adding meal to order
+* Viewing lists of all orders
+* Single Page Application
+* Back-end done in ruby
+* Front-end done in JavaScript
+* Test for meal_order
+
 ## Main gems used:
 * gem 'uglifier', '>= 1.3.0'
 * gem 'byebug', platform: :mri
