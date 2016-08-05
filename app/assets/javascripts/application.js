@@ -18,7 +18,6 @@
 //= require angular-sanitize
 //= require angular-rails-templates
 //= require ./monteat/app
-//= require_tree .
 //= require_tree ./monteat/templates
 //= require_tree ./monteat/modules
 //= require_tree ./monteat/filters
